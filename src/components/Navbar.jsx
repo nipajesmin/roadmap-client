@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+    const { user, signOutUser } = useContext(AuthContext);
     return (
         <nav className="flex justify-between items-center p-4 bg-white shadow-md">
             {/* Logo */}
@@ -14,17 +17,25 @@ const Navbar = () => {
 
             {/* Auth Buttons */}
             <div>
-                {/* {!user ? ( */}
-                    <div className="flex gap-3">
-                        <button className="text-blue-600">Login</button>
-                        <button className="bg-blue-600 text-white px-4 py-1 rounded">Sign Up</button>
-                    </div>
-                {/* ) : ( */}
-                    <div className="flex items-center gap-2">
-                        {/* <span className="text-sm text-gray-700">Hi, {user.name}</span> */}
-                        <button className="text-red-500 text-sm">Logout</button>
-                    </div>
-                {/* )} */}
+                 {!user ? ( 
+                <div className="flex gap-3">
+                    <Link to="/login">
+                    <button className="text-blue-600">Login</button>
+                    </Link>
+                    
+                    <Link to="/register">
+                        <button className="bg-blue-600 text-white px-4 py-1 rounded">
+                            Sign Up
+                        </button>
+                    </Link>
+                </div>
+                 ) : ( 
+                <div onClick={signOutUser}
+                className="flex items-center gap-2">
+                    <span className="text-sm text-gray-700">Hi, {user.name}</span>
+                    <button className="text-red-500 text-sm">Logout</button>
+                </div>
+                 )} 
             </div>
         </nav>
 
