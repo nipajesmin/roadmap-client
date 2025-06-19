@@ -1,4 +1,5 @@
 import React from 'react';
+import Roadmap from './Roadmap';
 
 const Home = () => {
     return (
@@ -36,6 +37,7 @@ const Home = () => {
 
             </div>
         </section>
+        
     );
 };
 
