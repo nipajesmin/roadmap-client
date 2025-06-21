@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import Navbar from './Navbar';
-import {toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
@@ -77,16 +77,17 @@ const Login = () => {
                                 />
 
                             </div>
-                            <div className="form-control mt-6">
+                            <div className="form-control mt-6 flex justify-center">
                                 <button
                                     type="submit"
-                                    className={`btn btn-primary `}
-                                // disabled={loading}
+                                    style={{ backgroundColor: 'rgb(10,186,181)' }}
+                                    className="text-white px-6 py-2 rounded font-semibold hover:brightness-110 transition-colors duration-200"
                                 >
-                                    {/* {loading ? 'Logging in...' : 'Login'} */}
                                     Login
                                 </button>
                             </div>
+
+
 
                             <p className="text-sm text-center mt-2">
                                 Don’t have an account?{' '}

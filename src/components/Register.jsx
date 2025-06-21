@@ -132,11 +132,16 @@ const Register = () => {
                                 required
                             />
                         </div>
-                        <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-primary">
+                        <div className="form-control mt-6 flex justify-center">
+                            <button
+                                type="submit"
+                                style={{ backgroundColor: 'rgb(10,186,181)' }}
+                                className="text-white px-6 py-2 rounded font-semibold hover:brightness-110 transition-colors duration-200"
+                            >
                                 Register
                             </button>
                         </div>
+
 
                     </form>
                     <p className="ml-4 mb-4 pl-12">
