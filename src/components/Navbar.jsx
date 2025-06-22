@@ -1,9 +1,20 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
+    const navigate = useNavigate(); // used for redirection
+
+    const handleLogout = () => {
+        signOutUser()
+            .then(() => {
+                navigate('/login'); // redirect after logout
+            })
+            .catch(error => {
+                console.error('Logout error:', error);
+            });
+    };
 
     return (
         <nav
@@ -17,8 +28,6 @@ const Navbar = () => {
             <div className="hidden md:flex gap-4 text-white font-medium ">
                 <a href="/" className='hover:underline'>Home</a>
                 <a href="#roadmap" className='hover:underline'>Roadmap</a>
-
-
             </div>
 
             {/* Auth Buttons */}
@@ -50,7 +59,7 @@ const Navbar = () => {
                     </div>
                 ) : (
                     <button
-                        onClick={signOutUser}
+                        onClick={handleLogout}
                         className="px-6 py-2 rounded-full font-medium border text-white"
                         style={{
                             borderColor: 'white',
@@ -61,9 +70,9 @@ const Navbar = () => {
                     </button>
                 )}
             </div>
-
         </nav>
     );
 };
 
 export default Navbar;
+
