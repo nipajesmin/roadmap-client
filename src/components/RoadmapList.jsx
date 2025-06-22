@@ -7,13 +7,13 @@ const RoadmapList = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('http://localhost:3000/roadmaps')
+        fetch('https://roadmap-server-pi.vercel.app/roadmaps')
             .then(res => res.json())
             .then(data => setItems(data));
     }, []);
 
     const handleUpvote = (id) => {
-        fetch(`http://localhost:3000/roadmaps/upvote/${id}`, {
+        fetch(`https://roadmap-server-pi.vercel.app/roadmaps/upvote/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

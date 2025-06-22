@@ -17,12 +17,12 @@ const router = createBrowserRouter([
   {
     path: "/roadmapItem",
     element: <RoadmapItems></RoadmapItems>,
-    loader: () => fetch('http://localhost:3000/roadmapItems')
+    loader: () => fetch('https://roadmap-server-pi.vercel.app/roadmapItems')
   },
   {
     path: "/roadmapItem/:id",
     element: <RoadmapDetails></RoadmapDetails>,
-    loader: ({ params }) => fetch(`http://localhost:3000/roadmapItems/${params.id}`)
+    loader: ({ params }) => fetch(`https://roadmap-server-pi.vercel.app/roadmapItems/${params.id}`)
   },
 
   {

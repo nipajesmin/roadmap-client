@@ -33,7 +33,7 @@ const Register = () => {
                         const newUser = { name, email, url };
 
                         // Save user to DB
-                        fetch('http://localhost:3000/users', {
+                        fetch('https://roadmap-server-pi.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const Register = () => {
                 const newUser = { name, email, url };
 
                 //Save new user info to the database
-                fetch('http://localhost:3000/users', {
+                fetch('https://roadmap-server-pi.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

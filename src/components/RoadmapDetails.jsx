@@ -20,7 +20,7 @@ const RoadmapDetails = () => {
         const userEmail = user?.email;
         if (!userEmail) return toast.error("Please log in to upvote.");
 
-        const res = await fetch(`http://localhost:3000/roadmapItems/${item._id}/upvote`, {
+        const res = await fetch(`https://roadmap-server-pi.vercel.app/roadmapItems/${item._id}/upvote`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userEmail })
@@ -40,7 +40,7 @@ const RoadmapDetails = () => {
         if (!newComment.trim()) return;
         if (newComment.length > 300) return toast.error("Comment too long (max 300 chars)");
 
-        const res = await fetch(`http://localhost:3000/roadmapItems/${item._id}/comments`, {
+        const res = await fetch(`https://roadmap-server-pi.vercel.app/roadmapItems/${item._id}/comments`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userEmail: user?.email, comment: newComment })
@@ -58,7 +58,7 @@ const RoadmapDetails = () => {
         const replyText = replyMap[commentId];
         if (!replyText || replyText.length > 300) return toast.error("Reply is too long or empty");
 
-        const res = await fetch(`http://localhost:3000/roadmapItems/${item._id}/comments/${commentId}/reply`, {
+        const res = await fetch(`https://roadmap-server-pi.vercel.app/roadmapItems/${item._id}/comments/${commentId}/reply`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userEmail: user?.email, comment: replyText, parentIds })
@@ -73,7 +73,7 @@ const RoadmapDetails = () => {
     };
 
     const handleEditComment = async (commentId) => {
-        const res = await fetch(`http://localhost:3000/roadmapItems/${item._id}/comments/${commentId}`, {
+        const res = await fetch(`https://roadmap-server-pi.vercel.app/roadmapItems/${item._id}/comments/${commentId}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ comment: editedCommentText })
@@ -88,7 +88,7 @@ const RoadmapDetails = () => {
     };
 
     const handleDeleteComment = async (commentId) => {
-        const res = await fetch(`http://localhost:3000/roadmapItems/${item._id}/comments/${commentId}`, {
+        const res = await fetch(`https://roadmap-server-pi.vercel.app/roadmapItems/${item._id}/comments/${commentId}`, {
             method: 'DELETE'
         });
 

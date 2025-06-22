@@ -15,7 +15,7 @@ const RoadmapItems = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:3000/roadmapItems')
+        fetch('https://roadmap-server-pi.vercel.app/roadmapItems')
             .then(res => res.json())
             .then(data => {
                 setItems(data);

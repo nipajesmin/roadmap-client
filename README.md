@@ -1,12 +1,51 @@
-# React + Vite
+# 🚀 PathPulse – Roadmap Feedback App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PathPulse is a full-stack web application that allows users to view, upvote, and comment on roadmap items. It is designed to foster community engagement by allowing feedback through comments and replies, up to three levels deep.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Preview
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## 🛠️ Tech Stack
+
+### Frontend:
+ **React.js**
+ **React Router**
+ **Tailwind CSS**
+ **Firebase Authentication**
+
+### Backend:
+ **Express.js**
+ **MongoDB**
+ **Node.js**
+
+## 🔐 Features
+
+### 🔓 Authentication
+1. Register and login using Firebase Auth
+2. Protects routes to ensure only logged-in users can interact
+
+### 🧭 Roadmap Items
+1. View all roadmap items with filters for:
+    Category: Feature, Improvement, Goal
+    Status: Planned, In Progress, Completed
+    Sorting: Most Popular, Newest
+2. View details of any item (restricted to authenticated users)
+
+### 📈 Upvoting
+  Users can upvote a roadmap item once
+  Votes are counted and displayed
+
+### 💬 Commenting System
+  Add comments and replies (up to 3 nested levels)
+  Edit and delete own comments
+  Threaded comment structure for better discussions
+
+### 🌐 Navigation
+  Smooth client-side routing
+  Responsive navigation bar and footer
+
+
+
+

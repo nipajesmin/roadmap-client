@@ -1,6 +1,6 @@
 import React from 'react';
 import Roadmap from './Roadmap';
-
+import header from '../.././public/banner.jpg'
 const Home = () => {
     return (
         <section className="bg-white py-12">
@@ -8,7 +8,7 @@ const Home = () => {
                 {/* Left Side - Image */}
                 <div className="md:w-1/2">
                     <img
-                        src="/public/banner.jpg"
+                        src={header}
                         alt="Hero Visual"
                         className="w-full h-auto"
                     />
